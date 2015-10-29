@@ -3,8 +3,7 @@
 function Person (name) {
 
     var myName = name;
-    document.createElement(myName);
-  return myName;
+   return myName;
  }
   console.log(Person('Gail'));
 
@@ -13,7 +12,10 @@ function Person (name) {
  * `name`, assign it the same name as before,
  * as well as an `age` (number);
  */
-var Person = ['Gail', 40];
+var Person = {
+   name: 'Gail',
+   age: 21,
+};
 
 
 /* Create a function called `greet`,
@@ -24,7 +26,7 @@ function greet (name) {
 return "Hello, my name is " + name;
 
 }
-console.log(greet());
+console.log(greet('Joe'));
 /* Create a variable called `canDrive`,
  * if it should be true if your person object is at least 16 years old
  */
@@ -33,29 +35,27 @@ function canDrive (age) {
 if (age >= 16) {return true;}
 else if (age < 16) {return false;}
 }
-console.log(greet('Hector'));
+
 console.log(canDrive(29));
 /* Create an array called `dataTypes` with atleast 1 of every data type;
  * (there are 6 different data types);
  */
-var dataTypes = ['hello', true, null, undefined, 1020, '']
-var
 
 function findDataType (dataTypes) {
 
-var types = ['string', 'booleans', null, 'undefined', 'numbers', 'symbols'];
-      for ( var i = 0; i < dataTypes.length; i++ ) {
+ var types = ['hello', true, null, undefined, 20, 'dog'];
+
+      for ( var i = 0; i < types.length; i++ ) {
        dataTypes = types[i];
 
-        if ( dataTypes[i] === null ) {
-          types.push( null );
+        if ( dataTypes === null ) {
+          dataTypes.push( null );
         }
         else {
-          types.push( typeof dataTypes[i] );
+          dataTypes.push( typeof types );
         }
       }
     }
-
       findDataType ();
       types.should.include( 'string' );
       types.should.include( 'number' );
@@ -77,6 +77,7 @@ function bark (sound, name){
     name: 'Spot',
     age: 15,
     color: 'yellow',
+    sound: 'bark',
     };
 
     return  name + " " + "really likes to" + " " + sound + "!";
